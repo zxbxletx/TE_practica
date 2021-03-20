@@ -1,0 +1,65 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package com.practica;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+/**
+ *
+ * @author Zxbxl
+ */
+@WebServlet(name = "Ejercicio4", urlPatterns = {"/Ejercicio4"})
+public class Ejercicio4 extends HttpServlet {
+
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        response.setContentType("text/html;charset=UTF-8");
+        try (PrintWriter out = response.getWriter()) {
+            out.println("<!DOCTYPE html>");
+            out.println("<html>");
+            out.println("<head>");
+            out.println("<title>Servlet Ejercicio4</title>");
+            out.println("</head>");
+            out.println("<body>");
+            out.println("<h1>ingrresa tu monto</h1>");
+            out.println("<form action='SalidaEjercicio4' method='post'>");
+            out.println("<fieldset>");
+            out.println("Convertir esta cantidad:  <input type='text' name='valor' value=>");
+            out.println("<br>");
+            out.println("DESDE");
+            out.println("<select name='tipoA' size=”2“>");
+            out.println("<option value='USD'>Estados Unidos Dólares</option >");
+            out.println("<option value='BS'>Bolivianos</option>");
+            out.println("</select>");    
+            out.println("A:");   
+            out.println("<select name='tipoB' size=”2“>");
+            out.println("<option value='USD'>Estados Unidos Dólares</option>");
+            out.println("<option value='BS'>Bolivianos</option>");
+            out.println("</select>");
+            out.println("<br>");
+            out.println("<input type='submit' value='Conversión' >");
+            out.println("</fieldset>");
+            out.println("<br>");
+            out.println("<a href='Main'>volver al menu </a>");
+            out.println("</form>");
+            out.println("</body>");
+            out.println("</html>");
+        }
+    }
+
+    @Override
+    public String getServletInfo() {
+        return "Short description";
+    }// </editor-fold>
+
+}
